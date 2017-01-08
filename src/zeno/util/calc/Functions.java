@@ -12,6 +12,139 @@ import zeno.util.tools.primitives.Doubles;
  */
 public final class Functions
 {
+	// Arithmetic
+	
+	/**
+	 * Returns the multiplication function.
+	 * 
+	 * @param x  the first variable
+	 * @param y  the second variable
+	 * @return  the multiply function
+	 */
+	public static Function Multiply(Variable x, Variable y)
+	{
+		return new Function()
+		{
+			@Override
+			public double evaluate(double... args)
+			{
+				return x.evaluate(args[0])
+					 * y.evaluate(args[1]);
+			}
+		};
+	}
+		
+	/**
+	 * Returns the subtraction function.
+	 * 
+	 * @param x  the first variable
+	 * @param y  the second variable
+	 * @return  the subtract function
+	 */
+	public static Function Subtract(Variable x, Variable y)
+	{
+		return new Function()
+		{
+			@Override
+			public double evaluate(double... args)
+			{
+				return x.evaluate(args[0])
+					 - y.evaluate(args[1]);
+			}
+		};
+	}
+	
+	/**
+	 * Returns the division function.
+	 * 
+	 * @param x  the first variable
+	 * @param y  the second variable
+	 * @return  the division function
+	 */
+	public static Function Divide(Variable x, Variable y)
+	{
+		return new Function()
+		{
+			@Override
+			public double evaluate(double... args)
+			{
+				return x.evaluate(args[0])
+					 / y.evaluate(args[1]);
+			}
+		};
+	}
+		
+	/**
+	 * Returns the addition function.
+	 * 
+	 * @param x  the first variable
+	 * @param y  the second variable
+	 * @return  the addition function
+	 */
+	public static Function Add(Variable x, Variable y)
+	{
+		return new Function()
+		{
+			@Override
+			public double evaluate(double... args)
+			{
+				return x.evaluate(args[0])
+					 + y.evaluate(args[1]);
+			}
+		};
+	}
+	
+	
+	/**
+	 * Returns the multiplication function.
+	 * 
+	 * @param x  the first argument
+	 * @param y  the second argument
+	 * @return  the multiply function
+	 */
+	public static Function Multiply(String x, String y)
+	{
+		return Multiply(arg(x), arg(y));
+	}
+	
+	/**
+	 * Returns the subtraction function.
+	 * 
+	 * @param x  the first variable
+	 * @param y  the second variable
+	 * @return  the subtract function
+	 */
+	public static Function Subtract(String x, String y)
+	{
+		return Subtract(arg(x), arg(y));
+	}
+	
+	/**
+	 * Returns the division function.
+	 * 
+	 * @param x  the first variable
+	 * @param y  the second variable
+	 * @return  the division function
+	 */
+	public static Function Divide(String x, String y)
+	{
+		return Divide(arg(x), arg(y));
+	}
+	
+	/**
+	 * Returns the addition function.
+	 * 
+	 * @param x  the first variable
+	 * @param y  the second variable
+	 * @return  the addition function
+	 */
+	public static Function Add(String x, String y)
+	{
+		return Add(arg(x), arg(y));
+	}
+
+	
+	
 	// Exponential
 	
 	/**
@@ -36,18 +169,6 @@ public final class Functions
 			}
 		};
 	}
-
-	/**
-	 * Returns the {@link Doubles#pow} function.
-	 * 
-	 * @param x  the power's base arg
-	 * @param p  the power's exponent arg
-	 * @return   the power function
-	 */
-	public static Function Pow(String x, String p)
-	{
-		return Pow(arg(x), arg(p));
-	}
 	
 	/**
 	 * Returns the {@link Doubles#exp} function.
@@ -69,6 +190,19 @@ public final class Functions
 			}
 		};
 	}
+
+	
+	/**
+	 * Returns the {@link Doubles#pow} function.
+	 * 
+	 * @param x  the power's base arg
+	 * @param p  the power's exponent arg
+	 * @return   the power function
+	 */
+	public static Function Pow(String x, String p)
+	{
+		return Pow(arg(x), arg(p));
+	}
 	
 	/**
 	 * Returns the {@link Doubles#exp} function.
@@ -81,6 +215,7 @@ public final class Functions
 		return Exp(arg(arg));
 	}
 
+	
 	
 	// Extremes
 		
@@ -125,29 +260,7 @@ public final class Functions
 			}
 		};
 	}
-	
-	/**
-	 * Returns the {@link Doubles#min} function.
-	 * 
-	 * @param args  a list of arguments
-	 * @return  the minimum function
-	 */
-	public static Function Min(String... args)
-	{
-		return Min(arg(args));
-	}
 		
-	/**
-	 * Returns the {@link Doubles#max} function.
-	 * 
-	 * @param args  a list of arguments
-	 * @return  the maximum function
-	 */
-	public static Function Max(String... args)
-	{
-		return Max(arg(args));
-	}
-	
 	/**
 	 * Returns the {@link Doubles#sign} function.
 	 * 
@@ -190,6 +303,29 @@ public final class Functions
 		};
 	}
 	
+	
+	/**
+	 * Returns the {@link Doubles#min} function.
+	 * 
+	 * @param args  a list of arguments
+	 * @return  the minimum function
+	 */
+	public static Function Min(String... args)
+	{
+		return Min(arg(args));
+	}
+		
+	/**
+	 * Returns the {@link Doubles#max} function.
+	 * 
+	 * @param args  a list of arguments
+	 * @return  the maximum function
+	 */
+	public static Function Max(String... args)
+	{
+		return Max(arg(args));
+	}
+	
 	/**
 	 * Returns the {@link Doubles#sign} function.
 	 * 
@@ -212,6 +348,7 @@ public final class Functions
 		return Abs(arg(arg));
 	}
 
+	
 	
 	// Logarithms
 	
@@ -237,19 +374,7 @@ public final class Functions
 			}
 		};
 	}
-	
-	/**
-	 * Returns the {@link Doubles#log} function.
-	 * 
-	 * @param var  an argument to use
-	 * @param base  a base to use
-	 * @return  the log function
-	 */
-	public static Function Log(String var, String base)
-	{
-		return Log(arg(var), arg(base));
-	}
-	
+		
 	/**
 	 * Returns the {@link Doubles#log10} function.
 	 * 
@@ -270,18 +395,7 @@ public final class Functions
 			}
 		};
 	}
-	
-	/**
-	 * Returns the {@link Doubles#log10} function.
-	 * 
-	 * @param arg  an argument to use
-	 * @return   the log10 function
-	 */
-	public static Function Log10(String arg)
-	{
-		return Log10(arg(arg));
-	}
-				
+					
 	/**
 	 * Returns the {@link Doubles#ln} function.
 	 * 
@@ -303,6 +417,30 @@ public final class Functions
 		};
 	}
 	
+	
+	/**
+	 * Returns the {@link Doubles#log} function.
+	 * 
+	 * @param var  an argument to use
+	 * @param base  a base to use
+	 * @return  the log function
+	 */
+	public static Function Log(String var, String base)
+	{
+		return Log(arg(var), arg(base));
+	}
+	
+	/**
+	 * Returns the {@link Doubles#log10} function.
+	 * 
+	 * @param arg  an argument to use
+	 * @return   the log10 function
+	 */
+	public static Function Log10(String arg)
+	{
+		return Log10(arg(arg));
+	}
+	
 	/**
 	 * Returns the {@link Doubles#ln} function.
 	 * 
@@ -313,6 +451,7 @@ public final class Functions
 	{
 		return Ln(arg(arg));
 	}
+	
 	
 	
 	// Roots
@@ -359,6 +498,7 @@ public final class Functions
 		};
 	}
 	
+	
 	/**
 	 * Returns the {@link Doubles#cbrt} function.
 	 * 
@@ -380,6 +520,7 @@ public final class Functions
 	{
 		return Sqrt(arg(arg));
 	}
+	
 	
 	
 	// Rounding
@@ -408,7 +549,7 @@ public final class Functions
 			}
 		};
 	}
-
+			
 	/**
 	 * Returns the {@link Doubles#clamp} function.
 	 * 
@@ -421,7 +562,8 @@ public final class Functions
 	{
 		return Clamp(arg(arg), arg(min), arg(max));
 	}
-			
+	
+	
 	/**
 	 * Returns the {@link Doubles#round} function.
 	 * 
@@ -444,19 +586,7 @@ public final class Functions
 			}
 		};
 	}
-	
-	/**
-	 * Returns the {@link Doubles#round} function.
-	 * 
-	 * @param arg  an argument to round
-	 * @param dec  a decimal count
-	 * @return  the round function
-	 */
-	public static Function Round(String arg, int dec)
-	{		
-		return Round(arg(arg), dec);
-	}
-			
+				
 	/**
 	 * Returns the {@link Doubles#round} function.
 	 * 
@@ -520,6 +650,19 @@ public final class Functions
 		};
 	}
 	
+		
+	/**
+	 * Returns the {@link Doubles#round} function.
+	 * 
+	 * @param arg  an argument to round
+	 * @param dec  a decimal count
+	 * @return  the round function
+	 */
+	public static Function Round(String arg, int dec)
+	{		
+		return Round(arg(arg), dec);
+	}
+	
 	/**
 	 * Returns the {@link Doubles#round} function.
 	 * 
@@ -552,6 +695,7 @@ public final class Functions
 	{
 		return Ceil(arg(arg));
 	}
+	
 	
 	
 	// Trigonometry
