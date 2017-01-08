@@ -6,6 +6,7 @@ package zeno.util.calc;
  * @since Jan 7, 2017
  * @author Zeno
  */
+@FunctionalInterface
 public interface Variable
 {
 	/**
