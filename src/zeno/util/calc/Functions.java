@@ -104,7 +104,7 @@ public final class Functions
 	 */
 	public static Function Multiply(String x, String y)
 	{
-		return Multiply(arg(x), arg(y));
+		return Multiply(Argument.from(x), Argument.from(y));
 	}
 	
 	/**
@@ -116,7 +116,7 @@ public final class Functions
 	 */
 	public static Function Subtract(String x, String y)
 	{
-		return Subtract(arg(x), arg(y));
+		return Subtract(Argument.from(x), Argument.from(y));
 	}
 	
 	/**
@@ -128,7 +128,7 @@ public final class Functions
 	 */
 	public static Function Divide(String x, String y)
 	{
-		return Divide(arg(x), arg(y));
+		return Divide(Argument.from(x), Argument.from(y));
 	}
 	
 	/**
@@ -140,7 +140,7 @@ public final class Functions
 	 */
 	public static Function Add(String x, String y)
 	{
-		return Add(arg(x), arg(y));
+		return Add(Argument.from(x), Argument.from(y));
 	}
 
 	
@@ -201,7 +201,7 @@ public final class Functions
 	 */
 	public static Function Pow(String x, String p)
 	{
-		return Pow(arg(x), arg(p));
+		return Pow(Argument.from(x), Argument.from(p));
 	}
 	
 	/**
@@ -212,7 +212,7 @@ public final class Functions
 	 */
 	public static Function Exp(String arg)
 	{
-		return Exp(arg(arg));
+		return Exp(Argument.from(arg));
 	}
 
 	
@@ -312,7 +312,7 @@ public final class Functions
 	 */
 	public static Function Min(String... args)
 	{
-		return Min(arg(args));
+		return Min(Argument.from(args));
 	}
 		
 	/**
@@ -323,7 +323,7 @@ public final class Functions
 	 */
 	public static Function Max(String... args)
 	{
-		return Max(arg(args));
+		return Max(Argument.from(args));
 	}
 	
 	/**
@@ -334,7 +334,7 @@ public final class Functions
 	 */
 	public static Function Sign(String arg)
 	{
-		return Sign(arg(arg));
+		return Sign(Argument.from(arg));
 	}
 	
 	/**
@@ -345,7 +345,7 @@ public final class Functions
 	 */
 	public static Function Abs(String arg)
 	{
-		return Abs(arg(arg));
+		return Abs(Argument.from(arg));
 	}
 
 	
@@ -427,7 +427,7 @@ public final class Functions
 	 */
 	public static Function Log(String var, String base)
 	{
-		return Log(arg(var), arg(base));
+		return Log(Argument.from(var), Argument.from(base));
 	}
 	
 	/**
@@ -438,7 +438,7 @@ public final class Functions
 	 */
 	public static Function Log10(String arg)
 	{
-		return Log10(arg(arg));
+		return Log10(Argument.from(arg));
 	}
 	
 	/**
@@ -449,7 +449,7 @@ public final class Functions
 	 */
 	public static Function Ln(String arg)
 	{
-		return Ln(arg(arg));
+		return Ln(Argument.from(arg));
 	}
 	
 	
@@ -507,7 +507,7 @@ public final class Functions
 	 */
 	public static Function Cbrt(String arg)
 	{
-		return Cbrt(arg(arg));
+		return Cbrt(Argument.from(arg));
 	}
 	
 	/**
@@ -518,7 +518,7 @@ public final class Functions
 	 */
 	public static Function Sqrt(String arg)
 	{
-		return Sqrt(arg(arg));
+		return Sqrt(Argument.from(arg));
 	}
 	
 	
@@ -560,7 +560,7 @@ public final class Functions
 	 */
 	public static Function Clamp(String arg, String min, String max)
 	{
-		return Clamp(arg(arg), arg(min), arg(max));
+		return Clamp(Argument.from(arg), Argument.from(min), Argument.from(max));
 	}
 	
 	
@@ -660,7 +660,7 @@ public final class Functions
 	 */
 	public static Function Round(String arg, int dec)
 	{		
-		return Round(arg(arg), dec);
+		return Round(Argument.from(arg), dec);
 	}
 	
 	/**
@@ -671,7 +671,7 @@ public final class Functions
 	 */
 	public static Function Round(String arg)
 	{
-		return Round(arg(arg));
+		return Round(Argument.from(arg));
 	}
 	
 	/**
@@ -682,7 +682,7 @@ public final class Functions
 	 */
 	public static Function Floor(String arg)
 	{
-		return Floor(arg(arg));
+		return Floor(Argument.from(arg));
 	}
 
 	/**
@@ -693,7 +693,7 @@ public final class Functions
 	 */
 	public static Function Ceil(String arg)
 	{
-		return Ceil(arg(arg));
+		return Ceil(Argument.from(arg));
 	}
 	
 	
@@ -732,7 +732,7 @@ public final class Functions
 	 */
 	public static Function Atan2(String x, String y)
 	{
-		return Atan2(arg(x), arg(y));
+		return Atan2(Argument.from(x), Argument.from(y));
 	}
 		
 	
@@ -807,7 +807,7 @@ public final class Functions
 	 */
 	public static Function Sin(String arg)
 	{
-		return Sin(arg(arg));
+		return Sin(Argument.from(arg));
 	}
 	
 	/**
@@ -818,7 +818,7 @@ public final class Functions
 	 */
 	public static Function Cos(String arg)
 	{
-		return Cos(arg(arg));
+		return Cos(Argument.from(arg));
 	}
 	
 	/**
@@ -829,7 +829,7 @@ public final class Functions
 	 */
 	public static Function Tan(String arg)
 	{
-		return Tan(arg(arg));
+		return Tan(Argument.from(arg));
 	}
 	
 	
@@ -904,7 +904,7 @@ public final class Functions
 	 */
 	public static Function Cosh(String arg)
 	{
-		return Cosh(arg(arg));
+		return Cosh(Argument.from(arg));
 	}
 
 	/**
@@ -915,7 +915,7 @@ public final class Functions
 	 */
 	public static Function Sinh(String arg)
 	{
-		return Sinh(arg(arg));
+		return Sinh(Argument.from(arg));
 	}
 		
 	/**
@@ -926,7 +926,7 @@ public final class Functions
 	 */
 	public static Function Tanh(String arg)
 	{
-		return Tanh(arg(arg));
+		return Tanh(Argument.from(arg));
 	}
 	
 	
@@ -1001,7 +1001,7 @@ public final class Functions
 	 */
 	public static Function Acos(String arg)
 	{
-		return Acos(arg(arg));
+		return Acos(Argument.from(arg));
 	}
 
 	/**
@@ -1012,7 +1012,7 @@ public final class Functions
 	 */
 	public static Function ASin(String arg)
 	{
-		return ASin(arg(arg));
+		return ASin(Argument.from(arg));
 	}
 		
 	/**
@@ -1023,7 +1023,7 @@ public final class Functions
 	 */
 	public static Function ATan(String arg)
 	{
-		return ATan(arg(arg));
+		return ATan(Argument.from(arg));
 	}
 
 	
@@ -1038,23 +1038,7 @@ public final class Functions
 		
 		return result;
 	}
-	
-	static Argument[] arg(String... vars)
-	{
-		Argument[] result = new Argument[vars.length];
-		for(int i = 0; i < vars.length; i++)
-		{
-			result[i] = arg(vars[i]);
-		}
 		
-		return result;
-	}
-	
-	static Argument arg(String var)
-	{
-		return new Argument(var);
-	}
-	
  	private Functions()
 	{
 		// NOT APPLICABLE

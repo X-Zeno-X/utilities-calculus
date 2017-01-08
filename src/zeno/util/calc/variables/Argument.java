@@ -14,6 +14,35 @@ import zeno.util.tools.generic.properties.Discernible;
  */
 public class Argument implements Discernible, Variable
 {	
+	/**
+	 * Creates an array of {@code Arguments} from names.
+	 * 
+	 * @param args  an argument name array
+	 * @return  an array of arguments
+	 */
+	public static Argument[] from(String... args)
+	{
+		Argument[] result = new Argument[args.length];
+		for(int i = 0; i < args.length; i++)
+		{
+			result[i] = from(args[i]);
+		}
+		
+		return result;
+	}
+	
+	/**
+	 * Creates an {@code Argument} from a name.
+	 * 
+	 * @param arg  an argument name
+	 * @return  an argument
+	 */
+	public static Argument from(String arg)
+	{
+		return new Argument(arg);
+	}
+	
+	
 	private String name;
 	
 	/**
