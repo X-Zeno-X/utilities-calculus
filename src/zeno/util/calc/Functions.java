@@ -1,7 +1,7 @@
 package zeno.util.calc;
 
-import zeno.util.calc.vars.Argument;
-import zeno.util.calc.vars.Function;
+import zeno.util.calc.variables.Argument;
+import zeno.util.calc.variables.Function;
 import zeno.util.tools.primitives.Doubles;
 
 /**

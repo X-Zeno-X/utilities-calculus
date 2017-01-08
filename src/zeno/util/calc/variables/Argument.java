@@ -1,4 +1,4 @@
-package zeno.util.calc.vars;
+package zeno.util.calc.variables;
 
 import zeno.util.calc.Variable;
 import zeno.util.tools.generic.properties.Discernible;

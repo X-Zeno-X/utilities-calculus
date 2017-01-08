@@ -1,4 +1,4 @@
-package zeno.util.calc.vars;
+package zeno.util.calc.variables;
 
 import zeno.util.calc.Functions;
 import zeno.util.calc.Variable;
