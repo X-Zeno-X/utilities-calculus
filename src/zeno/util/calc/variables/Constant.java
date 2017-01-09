@@ -12,6 +12,18 @@ import zeno.util.calc.Variable;
  */
 public class Constant implements Variable
 {
+	/**
+	 * Creates a {@code Constant} from a value.
+	 * 
+	 * @param val  a constant value
+	 * @return  an constant
+	 */
+	public static Constant from(double val)
+	{
+		return new Constant(val);
+	}
+	
+	
 	private double val;
 	
 	/**

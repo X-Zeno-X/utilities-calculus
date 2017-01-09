@@ -1,6 +1,7 @@
 package zeno.util.calc;
 
 import zeno.util.calc.variables.Argument;
+import zeno.util.calc.variables.Constant;
 import zeno.util.calc.variables.Function;
 import zeno.util.tools.primitives.Doubles;
 
@@ -94,56 +95,7 @@ public final class Functions
 		};
 	}
 	
-	
-	/**
-	 * Returns the multiplication function.
-	 * 
-	 * @param x  the first argument
-	 * @param y  the second argument
-	 * @return  the multiply function
-	 */
-	public static Function Multiply(String x, String y)
-	{
-		return Multiply(Argument.from(x), Argument.from(y));
-	}
-	
-	/**
-	 * Returns the subtraction function.
-	 * 
-	 * @param x  the first variable
-	 * @param y  the second variable
-	 * @return  the subtract function
-	 */
-	public static Function Subtract(String x, String y)
-	{
-		return Subtract(Argument.from(x), Argument.from(y));
-	}
-	
-	/**
-	 * Returns the division function.
-	 * 
-	 * @param x  the first variable
-	 * @param y  the second variable
-	 * @return  the division function
-	 */
-	public static Function Divide(String x, String y)
-	{
-		return Divide(Argument.from(x), Argument.from(y));
-	}
-	
-	/**
-	 * Returns the addition function.
-	 * 
-	 * @param x  the first variable
-	 * @param y  the second variable
-	 * @return  the addition function
-	 */
-	public static Function Add(String x, String y)
-	{
-		return Add(Argument.from(x), Argument.from(y));
-	}
-
-	
+		
 	
 	// Exponential
 	
@@ -171,6 +123,30 @@ public final class Functions
 	}
 	
 	/**
+	 * Returns the {@link Doubles#pow} function.
+	 * 
+	 * @param x  the power's base
+	 * @param p  the power's exponent value
+	 * @return   the power function
+	 */
+	public static Function Pow(Variable x, double p)
+	{
+		return Pow(x, Constant.from(p));
+	}
+	
+	/**
+	 * Returns the {@link Doubles#pow} function.
+	 * 
+	 * @param x  the power's base value
+	 * @param p  the power's exponent
+	 * @return   the power function
+	 */
+	public static Function Pow(double x, Variable p)
+	{
+		return Pow(Constant.from(x), p);
+	}
+	
+	/**
 	 * Returns the {@link Doubles#exp} function.
 	 * 
 	 * @param var  a variable to use
@@ -195,13 +171,37 @@ public final class Functions
 	/**
 	 * Returns the {@link Doubles#pow} function.
 	 * 
-	 * @param x  the power's base arg
-	 * @param p  the power's exponent arg
+	 * @param x  the power's base argument
+	 * @param p  the power's exponent argument
 	 * @return   the power function
 	 */
 	public static Function Pow(String x, String p)
 	{
 		return Pow(Argument.from(x), Argument.from(p));
+	}
+	
+	/**
+	 * Returns the {@link Doubles#pow} function.
+	 * 
+	 * @param x  the power's base argument
+	 * @param p  the power's exponent value
+	 * @return   the power function
+	 */
+	public static Function Pow(String x, double p)
+	{
+		return Pow(Argument.from(x), Constant.from(p));
+	}
+	
+	/**
+	 * Returns the {@link Doubles#pow} function.
+	 * 
+	 * @param x  the power's base value
+	 * @param p  the power's exponent argument
+	 * @return   the power function
+	 */
+	public static Function Pow(double x, String p)
+	{
+		return Pow(Constant.from(x), Argument.from(p));
 	}
 	
 	/**
@@ -376,6 +376,30 @@ public final class Functions
 	}
 		
 	/**
+	 * Returns the {@link Doubles#log} function.
+	 * 
+	 * @param var  a variable to use
+	 * @param base  a base value to use
+	 * @return  the log function
+	 */
+	public static Function Log(Variable var, double base)
+	{
+		return Log(var, Constant.from(base));
+	}
+	
+	/**
+	 * Returns the {@link Doubles#log} function.
+	 * 
+	 * @param var  a value to use
+	 * @param base  a base to use
+	 * @return  the log function
+	 */
+	public static Function Log(double var, Variable base)
+	{
+		return Log(Constant.from(var), base);
+	}
+	
+	/**
 	 * Returns the {@link Doubles#log10} function.
 	 * 
 	 * @param var  a variable to use
@@ -421,13 +445,37 @@ public final class Functions
 	/**
 	 * Returns the {@link Doubles#log} function.
 	 * 
-	 * @param var  an argument to use
+	 * @param arg  an argument to use
 	 * @param base  a base to use
 	 * @return  the log function
 	 */
-	public static Function Log(String var, String base)
+	public static Function Log(String arg, String base)
 	{
-		return Log(Argument.from(var), Argument.from(base));
+		return Log(Argument.from(arg), Argument.from(base));
+	}
+	
+	/**
+	 * Returns the {@link Doubles#log} function.
+	 * 
+	 * @param arg  an argument to use
+	 * @param base  a base value to use
+	 * @return  the log function
+	 */
+	public static Function Log(String arg, double base)
+	{
+		return Log(Argument.from(arg), Constant.from(base));
+	}
+	
+	/**
+	 * Returns the {@link Doubles#log} function.
+	 * 
+	 * @param var  a value to use
+	 * @param base  a base argument to use
+	 * @return  the log function
+	 */
+	public static Function Log(double var, String base)
+	{
+		return Log(Constant.from(var), Argument.from(base));
 	}
 	
 	/**
@@ -553,6 +601,19 @@ public final class Functions
 	/**
 	 * Returns the {@link Doubles#clamp} function.
 	 * 
+	 * @param var  a variable to clamp
+	 * @param min  the argument's minimum
+	 * @param max  the argument's maximum
+	 * @return  the clamp function
+	 */
+	public static Function Clamp(Variable var, double min, double max)
+	{
+		return Clamp(var, Constant.from(min), Constant.from(max));
+	}
+	
+	/**
+	 * Returns the {@link Doubles#clamp} function.
+	 * 
 	 * @param arg  an argument to clamp
 	 * @param min  the argument's minimum
 	 * @param max  the argument's maximum
@@ -561,6 +622,19 @@ public final class Functions
 	public static Function Clamp(String arg, String min, String max)
 	{
 		return Clamp(Argument.from(arg), Argument.from(min), Argument.from(max));
+	}
+	
+	/**
+	 * Returns the {@link Doubles#clamp} function.
+	 * 
+	 * @param arg  an argument to clamp
+	 * @param min  the argument's minimum
+	 * @param max  the argument's maximum
+	 * @return  the clamp function
+	 */
+	public static Function Clamp(String arg, double min, double max)
+	{
+		return Clamp(Argument.from(arg), Constant.from(min), Constant.from(max));
 	}
 	
 	
