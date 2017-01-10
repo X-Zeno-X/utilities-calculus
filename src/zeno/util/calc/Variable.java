@@ -1,8 +1,8 @@
 package zeno.util.calc;
 
 import zeno.util.calc.variables.Argument;
-import zeno.util.calc.variables.Constant;
 import zeno.util.calc.variables.Function;
+import zeno.util.calc.variables.functions.Constant;
 
 /**
  * The {@code Variable} interface defines an object with real-valued variables.
